@@ -1,0 +1,26 @@
+@model Turnos.Models.Especialidad
+
+<h4>Eliminar Especialidad</h4>
+<h5>Esta usted seguro de eliminar el siguinte registro?</h5>
+<div class="row z-depth-3  blue lighten-4">
+    <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input asp-for="Descripcion" type="text" class="validate" disabled>
+        <label asp-for="Descripcion">Descripcion</label>
+        <span asp-validation-for="Descripcion"></span>
+    </div>
+    <form asp-action="Delete">
+        <div class="row center">
+            <div class="col s6">
+                <a class="waves-effect waves-light btn grey darken-3 " asp-action="Index"><i
+                        class="material-icons left">undo</i>Regresar</a>
+            </div>
+            <div class="col s6">
+                <input type="hidden" asp-for="IdEspecialidad" />
+                <button class="btn waves-effect waves-light cyan accent'4" type="submit" name="action">Eliminar
+                    <i class="material-icons right">delete</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

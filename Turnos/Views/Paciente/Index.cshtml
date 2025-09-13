@@ -1,0 +1,67 @@
+@model IEnumerable<Turnos.Models.Paciente>
+
+@* tabla *@
+<h1>Paciente</h1>
+
+<p>
+    @* <a asp-action="Create" class="btn btn-success">Crear</a> *@
+    <a asp-action="Create" class="btn-floating btn-large green"><i class="material-icons">person_add</i></a>
+</p>
+<table class="highlight striped responsive-table z-depth-3 blue lighten-5">
+    <thead class="centered text-center grey white-text ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+    </tr>
+    </thead>
+    <tbody class="centered">
+@foreach (var item in Model)
+{
+            <tr>
+                <td>@item.IdPaciente</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.Direccion</td>
+                <td>@item.Telefono</td>
+                <td>@item.Email</td>
+                <td class="center">
+                    @* <a class="btn blue mx-2" asp-action="Edit" asp-route-id="@item.IdMedico">Edit</a> *@
+                    <a class="btn blue mx-2" asp-action="Edit" asp-route-id="@item.IdPaciente"><i
+                            class="material-icons">edit</i></a>
+                </td>
+                <td class="center">
+                    @* <a class="btn orange mx-2" asp-action="Details" asp-route-id="@item.IdMedico">Details</a> *@
+                    <a class="btn orange mx-2" asp-action="Details" asp-route-id="@item.IdPaciente"><i
+                            class="material-icons">more_vert</i></a>
+                </td>
+                <td class="center">
+                    @* <a class="btn red mx-2" asp-action="Delete" asp-route-id="@item.IdMedico">Delete</a> *@
+                    <a class="btn red mx-2" asp-action="Delete" asp-route-id="@item.IdPaciente"><i
+                            class="material-icons">delete</i></a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>

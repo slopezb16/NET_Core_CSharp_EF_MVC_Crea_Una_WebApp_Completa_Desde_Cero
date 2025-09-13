@@ -1,0 +1,48 @@
+@model IEnumerable<Turnos.Models.Especialidad>
+
+@* tabla *@
+<h1>Especialidades</h1>
+
+<p>
+    @* <a asp-action="Create" class="btn btn-success">Crear</a> *@
+    <a asp-action="Create" class="btn-floating btn-large green"><i class="material-icons">person_add</i></a>
+</p>
+<table class="highlight striped responsive-table z-depth-3 blue lighten-5">
+    <thead class=" centered text-center grey white-text ">
+        <tr>
+            <th>
+@Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+@* <a class="btn btn-primary mx-2" asp-action="Edit" asp-route-id="@item.IdEspecialidad">Edit</a> *@
+                <a class=" btn blue mx-2" style="visibility: collapse;"><i class="material-icons">edit</i></a>
+    </th>
+    <th>
+@* <a class="btn btn-danger mx-2" asp-action="Delete" asp-route-id="@item.IdEspecialidad">Delete</a> *@
+        <a class="btn red mx-2" style="visibility: collapse;"><i class="material-icons">delete</i></a>
+    </th>
+    </tr>
+    </thead>
+    <tbody class="centered">
+@* Aqui coloco las especialidades *@
+@foreach (var item in Model)
+{
+            <tr>
+                <td>
+            @* @Html.DisplayFor(x => item.Descripcion) *@
+            @item.Descripcion
+                </td>
+                <td>
+            @* <a class="btn btn-primary mx-2" asp-action="Edit" asp-route-id="@item.IdEspecialidad">Edit</a> *@
+                    <a class="btn blue mx-2" asp-action="Edit" asp-route-id="@item.IdEspecialidad"><i
+                            class="material-icons">edit</i></a>
+                </td>
+                <td>
+            @* <a class="btn btn-danger mx-2" asp-action="Delete" asp-route-id="@item.IdEspecialidad">Delete</a> *@
+                    <a class="btn red mx-2" asp-action="Delete" asp-route-id="@item.IdEspecialidad"><i
+                            class="material-icons">delete</i></a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+@model Turnos.Models.Especialidad
+
+<h4>Crear Especialidad</h4>
+<hr />
+<div>
+    <form class="col s12" asp-action="Create">
+        <div asp-validation-summary="ModelOnly"></div>
+        @* <div class="col-6"> *@
+        @* Ponemos el label y el input con el nombre del id en este caso la descipcion *@
+        @* <label asp-for="Descripcion"></label> *@
+        @* <input asp-for="Descripcion" /> *@
+        @* Lo usamos para que en conjunto con el asp-validation-summary revise el campo *@
+        @* <span asp-validation-for="Descripcion"></span> *@
+        @* </div> *@
+        <div class="input-field col s6">
+            <i class="material-icons prefix">description</i>
+            <input asp-for="Descripcion" type="text" class="validate">
+            <label asp-for="Descripcion"></label>
+            <span asp-validation-for="Descripcion"></span>
+        </div>
+        <div class="row center">
+            <div class="col s6">
+                <a class="waves-effect waves-light btn grey darken-3 " asp-action="Index"><i
+                        class="material-icons left">undo</i>Regresar</a>
+            </div>
+            <div class="col s6">
+                <button class="btn waves-effect waves-light cyan accent'4" type="submit" name="action">Guardar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

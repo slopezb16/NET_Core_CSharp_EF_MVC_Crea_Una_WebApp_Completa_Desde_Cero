@@ -1,0 +1,47 @@
+@model Turnos.Models.Paciente
+
+<h4>Detalles Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col s12 m8">
+        <div class="card hoverable blue darken-2">
+            <div class="card-content white-text">
+                <span class="card-title">
+                    <h5><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido) </b>
+                    </h5>
+                </span>
+                <dl class="row">
+                    <dt class="col-sm-6">
+                        <h6>@Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model =>
+                            model.Direccion)</h6>
+                    </dt>
+                    <hr>
+                    <dt class="col-sm-6">
+                        <h6>@Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)
+                        </h6>
+                    </dt>
+                    <hr>
+                    <dt class="col-sm-6">
+                        <h6>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h6>
+                    </dt>
+                    <hr>
+                </dl>
+            </div>
+            <div class="card-action center blue-grey darken-2">
+                <div class="row text-center">
+                    <div class="col s6">
+                        <a class="waves-effect waves-light btn grey darken-3 " asp-action="Index"><i
+                                class="material-icons left">undo</i>Regresar</a>
+                    </div>
+                    <div class="col s6">
+                        <input type="hidden" asp-for="IdPaciente" />
+                        <a class="btn waves-effect waves-light cyan accent'4" asp-action="Edit"
+                            asp-route-id="@Model.IdPaciente" name="action">Editar
+                            <i class="material-icons right">edit</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

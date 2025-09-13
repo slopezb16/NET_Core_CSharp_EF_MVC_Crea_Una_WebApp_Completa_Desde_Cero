@@ -1,0 +1,59 @@
+@model Turnos.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Turnos</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Turnos.styles.css" asp-append-version="true" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css" media="screen,projection" />
+</head>
+
+<body>
+    <div class="container center">
+        <h4>Login</h4>
+        <hr />
+        <br />
+        <form class="col s12" asp-action="Login">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col s12" style="display: ruby;">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">person_pin</i>
+                        <input asp-for="Usuario" type="text">
+                        <label asp-for="Usuario"></label>
+                        <span asp-validation-for="Usuario" class="red-text"></span>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input asp-for="Password" type="password">
+                        <label asp-for="Password"></label>
+                        <span asp-validation-for="Password" class="red-text"></span>
+                    </div>
+                    <span class="red-text">@ViewBag.ErrorLogin</span>
+                    <br>
+                    <div class="col s6 m6">
+                        <button class="btn waves-effect waves-light cyan accent-4" type="submit" name="action">
+                            Ingresar <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="~/js/materialize.min.js"></script>
+</body>
+
+</html>
